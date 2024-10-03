@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::create('bbs', function (Blueprint $table) {
             $table->id();
+            $table->string('title', 50);
+            $table->text('content');
+            $table->float('price');
             $table->timestamps();
+            $table->index('created_at');
         });
     }
 
