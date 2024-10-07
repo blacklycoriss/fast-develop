@@ -41,4 +41,9 @@ class HomeController extends Controller
 
         return redirect()->route('home');
     }
+
+    public function edit(Bb $bb)
+    {
+        return view('bb-edit', ['bb' => $bb]);
+    }
 }
