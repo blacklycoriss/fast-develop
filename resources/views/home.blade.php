@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Мои объявления')
 @section('content')
-    <p class="text-end"><a href="">Добавить объявление</a></p>
+    <p class="text-end"><a href="{{ route('bb.create') }}">Добавить объявление</a></p>
     @if (count($bbs) > 0)
         <table class="table table-striped table-borderless">
             <thead>
@@ -17,7 +17,7 @@
                     <td><h3>{{ $bb->title }}</h3></td>
                     <td>{{ $bb->price }}</td>
                     <td>
-                        <a href="{{ route('bb.create') }}">Изменить</a>
+                        <a href="">Изменить</a>
                     </td>
                     <td>
                         <a href="">Удалить</a>
