@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title', 50);
             $table->text('content');
-            $table->float('price');
+            $table->unsignedDouble('price');
             $table->foreignId('user_id')->constrained()
                 ->onDelete('cascade');
             $table->timestamps();
