@@ -26,11 +26,11 @@ Route::get('/home/create', [HomeController::class, 'create'])
 Route::post('/home', [HomeController::class, 'store'])
     ->name('bb.store');
 
-Route::get('/home/{bb}/edit'. [HomeController::class, 'edit'])
+Route::get('/home/{bb}/edit', [HomeController::class, 'edit'])
     ->name('bb.edit');
 Route::patch('/home/{bb}', [HomeController::class, 'update'])
     ->name('bb.update');
-Route::get('/home/{bb}'/delete, [HomeController::class, 'delete'])
+Route::get('/home/{bb}/delete', [HomeController::class, 'delete'])
     ->name('bb.delete');
 Route::delete('/home/{bb}', [HomeController::class, 'destroy'])
     ->name('bb.destroy');
