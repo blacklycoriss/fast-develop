@@ -17,7 +17,7 @@
                     <td><h3>{{ $bb->title }}</h3></td>
                     <td>{{ $bb->price }}</td>
                     <td>
-                        <a href="">Изменить</a>
+                        <a href="{{ route('bb.create') }}">Изменить</a>
                     </td>
                     <td>
                         <a href="">Удалить</a>
