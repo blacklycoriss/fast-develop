@@ -61,4 +61,11 @@ class HomeController extends Controller
     {
         return view('bb-delete', ['bb' => $bb]);
     }
+
+    public function destroy(Bb $bb)
+    {
+        $bb->delete();
+
+        return redirect()->route('home');
+    }
 }
