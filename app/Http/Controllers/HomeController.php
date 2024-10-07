@@ -27,4 +27,9 @@ class HomeController extends Controller
         return view('home',
         ['bbs' => Auth::user()->bbs()->latest()->get()]);
     }
+
+    public function create()
+    {
+        return view('bb-create');
+    }
 }
