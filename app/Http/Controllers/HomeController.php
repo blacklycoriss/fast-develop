@@ -46,4 +46,14 @@ class HomeController extends Controller
     {
         return view('bb-edit', ['bb' => $bb]);
     }
+
+    public function update(Request $request, Bb $bb)
+    {
+        $bb->fill(['title' => $request->input('title'),
+            'content' => $request->input('content'),
+            'price' => $request->input('price')]);
+        $bb->save();
+
+        return redirect()->route('home');
+    }
 }
