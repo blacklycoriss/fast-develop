@@ -35,9 +35,9 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
-        Auth::user()->bbs()->create(['title' => $request->title,
-            'content' => $request->content,
-            'price' => $request->price]);
+        Auth::user()->bbs()->create(['title' => $request->input('title'),
+            'content' => $request->input('content'),
+            'price' => $request->input('price')]);
 
         return redirect()->route('home');
     }
