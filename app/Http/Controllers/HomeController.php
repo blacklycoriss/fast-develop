@@ -56,4 +56,9 @@ class HomeController extends Controller
 
         return redirect()->route('home');
     }
+
+    public function delete(Bb $bb)
+    {
+        return view('bb-delete', ['bb' => $bb]);
+    }
 }
