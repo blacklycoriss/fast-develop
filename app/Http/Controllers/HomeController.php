@@ -32,4 +32,13 @@ class HomeController extends Controller
     {
         return view('bb-create');
     }
+
+    public function store(Request $request)
+    {
+        Auth::user()->bbs()->create(['title' => $request->title,
+            'content' => $request->content,
+            'price' => $request->price]);
+
+        return redirect()->route('home');
+    }
 }
