@@ -17,7 +17,12 @@ use App\Http\Controllers\BbsController;
 Route::get('/', [BbsController::class, 'index'])->name('index');
 
 Auth::routes();
+use App\Http\Controllers\HomeController;
 Route::get('/home',
-    [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    [HomeController::class, 'index'])->name('home');
+Route::get('/home/create', [HomeController::class, 'create'])
+    ->name('bb.create');
+Route::post('/home', [HomeController::class, 'store'])
+    ->name('bb.store');
 
 Route::get('/{bb}', [BbsController::class, 'detail'])->name('detail');
