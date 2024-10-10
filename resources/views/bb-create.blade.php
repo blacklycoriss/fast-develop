@@ -21,7 +21,11 @@
         </div>
         <div class="mb-3">
             <label for="txtPrice" class="form-label">Цена</label>
-            <input name="price" id="txtPrice" class="form-control">
+            <input name="price" id="txtPrice" class="form-control @error('price') is-invalid @enderror"
+            value="{{ old('price') }}">
+            @error('price')
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
         <input type="submit" class="btn btn-primary" value="Добавить">
     </form>
