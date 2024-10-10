@@ -42,10 +42,10 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate(self::BB_VALIDATOR);
-        Auth::user()->bbs()->create(['title' => $validated[$request->input('title')],
-            'content' => $validated[$request->input('content')],
-            'price' => $validated[$request->input('price')]
+        $this->validate($request, self::BB_VALIDATOR);
+        Auth::user()->bbs()->create(['title' => $request->input('title'),
+            'content' => $request->input('content'),
+            'price' => $request->input('price'),
         ]);
 
         return redirect()->route('home');
