@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+    private const BB_VALIDATOR = [
+        'title' => 'required|max:50',
+        'content' => 'required',
+        'price' => 'required|numeric',
+    ];
+
     /**
      * Create a new controller instance.
      *
