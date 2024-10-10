@@ -42,9 +42,11 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
-        Auth::user()->bbs()->create(['title' => $request->input('title'),
-            'content' => $request->input('content'),
-            'price' => $request->input('price')]);
+        $validated = $request->validate(self::BB_VALIDATOR);
+        Auth::user()->bbs()->create(['title' => $validated[$request->input('title')],
+            'content' => $validated[$request->input('content')],
+            'price' => $validated[$request->input('price')]
+        ]);
 
         return redirect()->route('home');
     }
@@ -56,9 +58,11 @@ class HomeController extends Controller
 
     public function update(Request $request, Bb $bb)
     {
-        $bb->fill(['title' => $request->input('title'),
-            'content' => $request->input('content'),
-            'price' => $request->input('price')]);
+        $validated = $request->validate(self::BB_VALIDATOR);
+        $bb->fill(['title' => $validated[$request->input('title')],
+            'content' => $validated[$request->input('content')],
+            'price' => $validated[$request->input('price')]
+        ]);
         $bb->save();
 
         return redirect()->route('home');
