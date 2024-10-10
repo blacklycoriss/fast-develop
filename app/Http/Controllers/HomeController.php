@@ -58,10 +58,10 @@ class HomeController extends Controller
 
     public function update(Request $request, Bb $bb)
     {
-        $validated = $request->validate(self::BB_VALIDATOR);
-        $bb->fill(['title' => $validated[$request->input('title')],
-            'content' => $validated[$request->input('content')],
-            'price' => $validated[$request->input('price')]
+        $this->validate($request, self::BB_VALIDATOR);
+        $bb->fill(['title' => $request->input('title'),
+            'content' => $request->input('content'),
+            'price' => $request->input('price'),
         ]);
         $bb->save();
 
