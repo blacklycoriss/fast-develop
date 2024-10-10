@@ -14,8 +14,11 @@
         </div>
         <div class="mb-3">
             <label for="txtContent" class="form-label">Описание</label>
-            <textarea name="content" id="txtContent" class="form-control"
-                      row="3">{{ $bb->content }}</textarea>
+            <textarea name="content" id="txtContent" class="form-control @error('content') is-invalid @enderror"
+                      row="3">{{ old('content', $bb->content }}</textarea>
+            @error('content')
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="txtPrice" class="form-label">Цена</label>
