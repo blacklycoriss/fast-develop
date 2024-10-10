@@ -5,7 +5,8 @@
         @csrf
         <div class="mb-3">
             <label for="txtTitle" class="form-label">Товар</label>
-            <input name="title" id="txtTitle" class="form-control">
+            <input name="title" id="txtTitle" class="form-control @error('title') is-invalid @enderror"
+            value="{{ old('title') }}">
         </div>
         <div class="mb-3">
             <label for="txtContent" class="form-label">Описание</label>
