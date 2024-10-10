@@ -7,6 +7,9 @@
             <label for="txtTitle" class="form-label">Товар</label>
             <input name="title" id="txtTitle" class="form-control @error('title') is-invalid @enderror"
             value="{{ old('title') }}">
+            @error('title')
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="txtContent" class="form-label">Описание</label>
