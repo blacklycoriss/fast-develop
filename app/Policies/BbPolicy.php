@@ -22,7 +22,7 @@ class BbPolicy
 
     public function update(User $user, Bb $bb)
     {
-        return $user->id;
+        return $bb->user->id === $user->id;
     }
 
     public function destroy(User $user, Bb $bb)
