@@ -134,8 +134,8 @@ return [
     'url'                  => 'Значение поля :attribute имеет ошибочный формат URL.',
     'uuid'                 => 'Значение поля :attribute должно быть корректным UUID.',
     'custom'               => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'price'   => [
+            'required'   => 'Раздача товаров даром не допускается',
         ],
     ],
 ];
