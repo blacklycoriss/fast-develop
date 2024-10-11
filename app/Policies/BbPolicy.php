@@ -3,6 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
+use App\Models\Bb;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class BbPolicy
@@ -17,5 +18,15 @@ class BbPolicy
     public function __construct()
     {
         //
+    }
+
+    public function update(User $user, Bb $bb)
+    {
+        return $user->id;
+    }
+
+    public function destroy(User $user, Bb $bb)
+    {
+        return $this->update($user, $bb);
     }
 }
